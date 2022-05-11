@@ -1,15 +1,16 @@
 import React from "react";
-import bg from "../../Assets/images/bg.png";
-import chair from "../../Assets/images/chair.png";
-import PrimaryButton from "../../Components/Button/PrimaryButton";
+import bg from "../../../Assets/images/bg.png";
+import chair from "../../../Assets/images/chair.png";
+import PrimaryButton from "../../../Components/Button/PrimaryButton";
 const Banner = () => {
   return (
     <div
-      class="hero min-h-fit py-28"
+      class="hero min-h-fit py-36"
       style={{
         background: `url(${bg})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <div class="hero-content flex-col lg:flex-row-reverse">
