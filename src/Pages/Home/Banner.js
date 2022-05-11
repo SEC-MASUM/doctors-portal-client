@@ -5,7 +5,7 @@ import PrimaryButton from "../../Components/Button/PrimaryButton";
 const Banner = () => {
   return (
     <div
-      class="hero min-h-screen"
+      class="hero min-h-fit py-28"
       style={{
         background: `url(${bg})`,
         backgroundRepeat: "no-repeat",
