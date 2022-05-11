@@ -33,10 +33,10 @@ const Services = () => {
   return (
     <section className="mx-auto my-32">
       <div className="text-center">
-        <h3 className="text-xl font-bold text-secondary uppercase">
+        <h1 className="text-xl font-bold text-secondary uppercase">
           Our Services
-        </h3>
-        <h1 className="text-4xl">Services We Provide</h1>
+        </h1>
+        <h3 className="text-4xl">Services We Provide</h3>
       </div>
       <div className="grid grid-col-1 lg:grid-cols-3 gap-5 mt-10">
         {services.map((service) => (
