@@ -8,3 +8,4 @@
 - DaisyUI
 - Firebase
 - React Firebase Hooks
+- React Hook Form
