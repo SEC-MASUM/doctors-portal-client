@@ -6,3 +6,5 @@
 - React Router Dom@6
 - Tailwind CSS
 - DaisyUI
+- Firebase
+- React Firebase Hooks
