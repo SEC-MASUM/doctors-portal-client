@@ -6,6 +6,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading/Loading";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -114,15 +115,26 @@ const Login = () => {
                 )}
               </label>
             </div>
+            {/* Error Section */}
             <label className="label">{loginErrorElement}</label>
+            {/* Login Button */}
             <input
               type="submit"
               value="Login"
               className="btn w-full max-w-xs"
             />
           </form>
+          <p className="text-center">
+            <small>
+              New to Doctors Portal?{" "}
+              <Link to="/signup" className="text-secondary">
+                Create New Account
+              </Link>
+            </small>
+          </p>
 
           <label className="divider">OR</label>
+          {/* Social Login */}
           <button
             onClick={() => signInWithGoogle()}
             className="btn btn-outline"
