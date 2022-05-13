@@ -2,7 +2,7 @@ import React from "react";
 import PrimaryButton from "../../../Components/Button/PrimaryButton";
 import doctor from "../../../Assets/images/doctor.png";
 import appointment from "../../../Assets/images/appointment.png";
-const Appointment = () => {
+const MakeAppointment = () => {
   return (
     <section
       class="min-h-fit flex justify-center items-center my-28"
@@ -30,4 +30,4 @@ const Appointment = () => {
   );
 };
 
-export default Appointment;
+export default MakeAppointment;
