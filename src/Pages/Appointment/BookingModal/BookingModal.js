@@ -6,12 +6,36 @@ import auth from "../../../Firebase/Firebase.init";
 const BookingModal = ({ date, treatment, setTreatment }) => {
   const { _id, name, slots } = treatment;
   const [user] = useAuthState(auth);
+  const formattedDate = format(date, "PP");
 
   const handleBooking = (event) => {
     event.preventDefault();
     const slot = event.target.timeSlot.value;
     console.log(_id, name, slot);
-    setTreatment(null);
+    const booking = {
+      treatmentId: _id,
+      treatment: name,
+      date: formattedDate,
+      slot: slot,
+      patient: user.email,
+      patientName: user.displayName,
+      phone: event.target.phone.value,
+    };
+
+    const url = "http://localhost:5000/booking";
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(booking),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // To close the modal
+        console.log(data);
+        setTreatment(null);
+      });
   };
 
   return (
