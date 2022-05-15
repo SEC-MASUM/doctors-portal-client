@@ -59,7 +59,7 @@ const BookingModal = ({ date, treatment, setTreatment }) => {
               name="email"
               // placeholder="Email Address"
               disabled
-              value={user.email}
+              value={user?.email}
               className="input input-bordered w-full max-w-xs"
             />
             <input
