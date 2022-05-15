@@ -1,8 +1,8 @@
 import React from "react";
-import PrimaryButton from "../../../Components/Button/PrimaryButton";
 
 const AppointmentService = ({ appointmentService, setTreatment }) => {
   const { name, slots } = appointmentService;
+  
   return (
     <div className="card lg:max-w-lg bg-base-100 shadow-xl">
       <div className="card-body items-center text-center">
