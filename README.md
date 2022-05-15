@@ -12,3 +12,4 @@
 - React Day Picker
 - Date Fns
 - React Toastify
+- React Query
