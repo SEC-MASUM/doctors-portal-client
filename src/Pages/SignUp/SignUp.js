@@ -8,6 +8,7 @@ import {
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading/Loading";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -40,12 +41,17 @@ const SignUp = () => {
   }
 
   const onSubmit = async (data) => {
-    await createUserWithEmailAndPassword(data.email, data.password);
+    await createUserWithEmailAndPassword(data.email, data.password, {
+      sendEmailVerification: true,
+    });
+    toast.info("Sent email verification", {
+      position: toast.POSITION.BOTTOM_RIGHT,
+    });
     await updateProfile({ displayName: data.name });
     navigate("/appointment");
   };
   return (
-    <div className="flex min-h-screen justify-center items-center">
+    <div className="flex min-h-screen justify-center items-center my-10">
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           {/* Sign Up Title */}
