@@ -30,6 +30,13 @@ const Navbar = () => {
           Contact Us
         </Link>
       </li>
+      {user && (
+        <li>
+          <Link to="/dashboard" className="whitespace-nowrap">
+            Dashboard
+          </Link>
+        </li>
+      )}
       <li>
         {user ? (
           <button onClick={logout} className="btn btn-ghost">
