@@ -11,3 +11,4 @@
 - React Hook Form
 - React Day Picker
 - Date Fns
+- React Toastify

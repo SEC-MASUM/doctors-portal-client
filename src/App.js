@@ -8,6 +8,7 @@ import ProtectedRoute from "./Pages/Login/ProtectedRoute";
 import Reviews from "./Pages/Reviews/Reviews";
 import Navbar from "./Pages/Shared/Navbar/Navbar";
 import SignUp from "./Pages/SignUp/SignUp";
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
