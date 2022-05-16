@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading/Loading";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import useToken from "../../Hooks/useToken";
 
 const SignUp = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -23,6 +24,8 @@ const SignUp = () => {
     handleSubmit,
   } = useForm();
 
+  const [token] = useToken(googleUser || emailUser);
+
   let errorElement;
   if (googleError || emailError || updateError) {
     errorElement = (
@@ -36,8 +39,9 @@ const SignUp = () => {
     return <Loading />;
   }
 
-  if (googleUser || emailUser) {
-    console.log(googleUser || emailUser);
+  if (token) {
+    navigate("/appointment");
+    // console.log(googleUser || emailUser);
   }
 
   const onSubmit = async (data) => {
@@ -48,7 +52,6 @@ const SignUp = () => {
       position: toast.POSITION.BOTTOM_RIGHT,
     });
     await updateProfile({ displayName: data.name });
-    navigate("/appointment");
   };
   return (
     <div className="flex min-h-screen justify-center items-center my-10">
