@@ -82,7 +82,7 @@ const Navbar = () => {
       </div>
       <div>
         <label
-          for="dashboard-sidebar"
+          htmlFor="dashboard-sidebar"
           tabIndex="1"
           className="btn btn-ghost lg:hidden"
         >
