@@ -15,9 +15,9 @@ const AvailableAppointments = ({ date }) => {
     isLoading,
     refetch,
   } = useQuery(["available", formattedDate], () =>
-    fetch(`http://localhost:5000/available?date=${formattedDate}`).then((res) =>
-      res.json()
-    )
+    fetch(
+      `https://doctors-portal-02.herokuapp.com/available?date=${formattedDate}`
+    ).then((res) => res.json())
   );
 
   if (isLoading) {
@@ -25,7 +25,7 @@ const AvailableAppointments = ({ date }) => {
   }
 
   // useEffect(() => {
-  //   const url = `http://localhost:5000/available?date=${formattedDate}`;
+  //   const url = `https://doctors-portal-02.herokuapp.com/available?date=${formattedDate}`;
   //   fetch(url)
   //     .then((res) => res.json())
   //     .then((data) => {
